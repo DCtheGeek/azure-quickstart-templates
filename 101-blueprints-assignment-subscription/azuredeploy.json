@@ -86,7 +86,7 @@
       "blueprintId": "/subscriptions/6e63aa3b-2906-4b32-9398-991282af72db/providers/Microsoft.Blueprint/blueprints/101-blueprints-definition-subscription/versions/1.0",
       "parameters": {
         "allowedlocations_listOfAllowedLocations": {
-          "value": "[parameters('policyLocation')]"
+          "value": ["[parameters('policyLocation')]"]
         },
         "[Usergrouporapplicationname]:Reader_RoleAssignmentName": {
           "value": "[parameters('roleAssignedTo')]"
