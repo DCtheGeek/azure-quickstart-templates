@@ -1,0 +1,33 @@
+{
+  "$schema": "https://schema.management.azure.com/schemas/2015-01-01/deploymentParameters.json#",
+  "contentVersion": "1.0.0.0",
+  "parameters": {
+    "blueprintName": {
+      "value": ""
+    },
+    "blueprintVersion": {
+      "value": ""
+    },
+    "subscriptionId": {
+      "value": ""
+    },
+    "resourceGroupName": {
+      "value": "email@example.com"
+    },
+    "resourceGroupLocation": {
+      "value": "templateTest"
+    },
+    "policyLocation": {
+      "value": "something"
+    },
+    "roleAssignedTo": {
+      "value": "SPN"
+    },
+    "templateStorageAccountType": {
+      "value": ""
+    },
+    "templateStorageLocation": {
+      "value": ""
+    }
+  }
+}

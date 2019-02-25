@@ -1,0 +1,114 @@
+{
+  "$schema": "https://schema.management.azure.com/schemas/2018-05-01/subscriptionDeploymentTemplate.json#",
+  "contentVersion": "1.0.0.0",
+  "parameters": {
+    "blueprintName": {
+      "type": "string",
+      "defaultValue": "101-blueprints-definition-subscription",
+      "metadata": {
+        "description": "The name of the blueprint saved in the subscription to assign."
+      }
+    },
+    "blueprintVersion": {
+      "type": "string",
+      "defaultValue": "1.0",
+      "metadata": {
+        "description": "The version of the blueprint to assign."
+      }
+    },
+    "subscriptionId": {
+      "type": "string",
+      "defaultValue": "[subscription().id]",
+      "metadata": {
+        "description": "The subscription to assign the blueprint to."
+      }
+    },
+    "resourceGroupName": {
+      "type": "string",
+      "defaultValue": "BlueprintCreatedRG",
+      "metadata": {
+        "description": "Name for the 'FirstRG' resource group blueprint artifact."
+      }
+    },
+    "resourceGroupLocation": {
+      "type": "string",
+      "defaultValue": "westus2",
+      "metadata": {
+        "description": "Location for the 'FirstRG' resource group blueprint artifact."
+      }
+    },
+    "policyLocation": {
+      "type": "array",
+      "defaultValue": ["[resourceGroup().location]"],
+      "metadata": {
+        "description": "List of allowed locations for the 'Allowed locations' policy assignment blueprint artifact."
+      }
+    },
+    "roleAssignedTo": {
+      "type": "string",
+      "metadata": {
+        "description": "The service principal objectId (e.g. '7be2f100-3af5-4c15-bcb7-27ee43784a1f') for the 'Reader' role assignment blueprint artifact."
+      }
+    },
+    "templateStorageAccountType": {
+      "type": "string",
+      "defaultValue": "Standard_LRS",
+      "allowedValues": [
+        "Standard_LRS",
+        "Standard_GRS",
+        "Standard_ZRS",
+        "Premium_LRS"
+      ],
+      "metadata": {
+        "description": "Storage account type for the 'StorageAccount' Resource Manager template blueprint artifact."
+      }
+    },
+    "templateStorageLocation": {
+      "type": "string",
+      "defaultValue": "[resourceGroup().location]",
+      "metadata": {
+        "description": "Location for the 'StorageAccount' Resource Manager template blueprint artifact."
+      }
+    }
+  },
+  "variables": {
+    "comment": "Azure QuickStarts"
+  },
+  "resources": [{
+    "type": "Microsoft.Blueprint/blueprintAssignments",
+    "name": "101-blueprints-assignment-subscription-assignment",
+    "apiVersion": "2018-11-01-preview",
+    "identity": {
+      "type": "SystemAssigned"
+    },
+    "location": "westus2",
+    "properties": {
+      "blueprintId": "[concat('/providers/Microsoft.Blueprint/blueprints/', parameters('blueprintName'), '/versions/', parameters('blueprintVersion'))]",
+      "parameters": {
+        "allowedlocations_listOfAllowedLocations": {
+          "value": "[parameters('policyLocation')]"
+        },
+        "[Usergrouporapplicationname]:Reader_RoleAssignmentName": {
+          "value": "[parameters('roleAssignedTo')]"
+        },
+        "storageAccount_storageAccountType": {
+          "value": "[parameters('templateStorageAccountType')]"
+        },
+        "storageAccount_location": {
+          "value": "[parameters('templateStorageLocation')]"
+        }
+      },
+      "resourceGroups": {
+        "ResourceGroup": {
+          "name": "[parameters('resourceGroupName')]",
+          "location": "[parameters('resourceGroupLocation')]"
+        }
+      },
+      "scope": "[concat('/subscriptions/', subscription().id]",
+      "locks": {
+        "mode": "none"
+      }
+    }
+  }],
+  "outputs": {}
+}

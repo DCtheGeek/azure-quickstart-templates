@@ -1,0 +1,11 @@
+{
+  "$schema": "https://aka.ms/azure-quickstart-templates-metadata-schema#",
+  "type": "QuickStart",
+  "itemDisplayName": "Assign a blueprint definition to a subscription",
+  "description": "This template assigns an existing Azure Blueprints definition with parameters to a subscription. Resources are not locked.",
+  "summary": "Assign a blueprint definition to a subscription using a template.",
+  "githubUsername": "dcthegeek",
+  "dateUpdated": "2019-02-24"
+}
+
+
