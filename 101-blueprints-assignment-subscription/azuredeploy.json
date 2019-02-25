@@ -38,8 +38,8 @@
       }
     },
     "policyLocation": {
-      "type": "array",
-      "defaultValue": ["[resourceGroup().location]"],
+      "type": "string",
+      "defaultValue": "eastus2;westus;westus",
       "metadata": {
         "description": "List of allowed locations for the 'Allowed locations' policy assignment blueprint artifact."
       }
