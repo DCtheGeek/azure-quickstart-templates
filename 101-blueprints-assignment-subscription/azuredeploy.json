@@ -65,7 +65,7 @@
     },
     "templateStorageLocation": {
       "type": "string",
-      "defaultValue": "[resourceGroup().location]",
+      "defaultValue": "[[resourceGroup().location]",
       "metadata": {
         "description": "Location for the 'StorageAccount' Resource Manager template blueprint artifact."
       }
