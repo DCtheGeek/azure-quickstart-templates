@@ -104,7 +104,7 @@
           "location": "[parameters('resourceGroupLocation')]"
         }
       },
-      "scope": "[[subscription().id]",
+      "scope": "[subscription().id]",
       "locks": {
         "mode": "none"
       }
