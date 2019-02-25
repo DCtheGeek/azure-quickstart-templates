@@ -83,7 +83,7 @@
     },
     "location": "westus2",
     "properties": {
-      "blueprintId": "[concat(parameters('subscriptionId'),'/providers/Microsoft.Blueprint/blueprints/', parameters('blueprintName'), '/versions/', parameters('blueprintVersion'))]",
+      "blueprintId": "/subscriptions/6e63aa3b-2906-4b32-9398-991282af72db/providers/Microsoft.Blueprint/blueprints/101-blueprints-definition-subscription/versions/1.0",
       "parameters": {
         "allowedlocations_listOfAllowedLocations": {
           "value": "[parameters('policyLocation')]"
