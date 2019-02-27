@@ -29,7 +29,7 @@ The following blueprint artifacts comprise the definition this template matches:
 |Resource group |FirstRG |resourceGroupName and resourceGroupLocation |Creates a resource group with the provided name and location in the subscription. Default name value is _BlueprintCreatedRG_ and location value is _westus2_. |
 |\- Policy assignment |Allowed locations |policyLocation |Deploys the [Azure Policy - Allowed locations](https://docs.microsoft.com/azure/governance/policy/samples/allowed-locations) definition. The parameter values are passed to the policy assignment. Default value is _eastus2;westus;westus_.|
 |\- Role assignment |Reader |roleAssignedTo |Assigns the _Reader_ role to the account provided in the parameter. No default value.|
-|\- Resource Manager template |StorageAccount |templateStorageAccountType and templateStorageLocation |Deploys the [101-storage-account-create](https://github.com/Azure/azure-quickstart-templates/tree/master/101-storage-account-create) Azure QuickStart template using the passed parameters. Default account type value is _Standard\_LRS_ and location value is the value set in _resourceGroupLocation_. |
+|\- Resource Manager template |StorageAccount |templateStorageAccountType |Deploys the [101-storage-account-create](https://github.com/Azure/azure-quickstart-templates/tree/master/101-storage-account-create) Azure QuickStart template using the passed parameter. Default value is _Standard\_LRS_. |
 
 ## Next steps
 

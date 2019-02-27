@@ -25,9 +25,6 @@
     },
     "templateStorageAccountType": {
       "value": ""
-    },
-    "templateStorageLocation": {
-      "value": ""
     }
   }
 }
