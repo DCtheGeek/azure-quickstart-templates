@@ -45,7 +45,7 @@
       }
     },
     "roleAssignedTo": {
-      "type": "string",
+      "type": "array",
       "metadata": {
         "description": "The service principal objectId (e.g. '7be2f100-3af5-4c15-bcb7-27ee43784a1f') for the 'Reader' role assignment blueprint artifact."
       }
