@@ -89,7 +89,7 @@
           "value": ["[parameters('policyLocation')]"]
         },
         "[Usergrouporapplicationname]:Reader_RoleAssignmentName": {
-          "value": "[parameters('roleAssignedTo')]"
+          "value": ["[parameters('roleAssignedTo')]"]
         },
         "storageAccount_storageAccountType": {
           "value": "[parameters('templateStorageAccountType')]"
