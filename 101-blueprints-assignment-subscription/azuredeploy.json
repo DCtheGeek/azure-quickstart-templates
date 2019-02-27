@@ -88,7 +88,7 @@
           "value": "[parameters('templateStorageAccountType')]"
         },
         "storageAccount_location": {
-          "value": "[[resourceGroup().location]"
+          "value": "[parameters('resourceGroupLocation')]"
         }
       },
       "resourceGroups": {
